@@ -42,10 +42,9 @@ class ModelTrainer:
                 "Decision Tree": DecisionTreeRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
-                "K-Neighbors Classifier": KNeighborsRegressor(),
-                "XGBClassifier": XGBRegressor(),
-                "CatBoosting Classifier": CatBoostRegressor(verbose=False),
-                "AdaBoost Classifier": AdaBoostRegressor(),
+                "XGBRegressor": XGBRegressor(),
+                "CatBoosting Regressor": CatBoostRegressor(verbose=False),
+                "AdaBoost Regressor": AdaBoostRegressor(),
             }
             params={
                 "Decision Tree": {
@@ -84,7 +83,6 @@ class ModelTrainer:
                 }
                 
             }
-
 
             model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
                                              models=models,param=params)
